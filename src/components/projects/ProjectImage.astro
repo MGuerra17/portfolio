@@ -1,0 +1,12 @@
+---
+const { image, description } = Astro.props;
+---
+
+<div class="bg-red-400 min-w-max">
+  <img
+    width="300px"
+    style="aspect-ratio: 16/9;"
+    src={image}
+    alt={description}
+  />
+</div>

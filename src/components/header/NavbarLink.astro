@@ -1,0 +1,89 @@
+---
+const { href, title } = Astro.props;
+---
+
+<li class="mx-1">
+  <a href={href} class="px-4 py-3 md:py-0 relative inline-block md:block"
+    ><span>{title}</span></a
+  >
+</li>
+
+<style>
+  a {
+    position: relative;
+    display: block;
+  }
+  a:before,
+  a span:before,
+  a:after,
+  a span:after {
+    content: "";
+    position: absolute;
+  }
+
+  a:before,
+  a span:before {
+    top: -webkit-calc(50% - 0.3em);
+    top: calc(50% - 0.3em);
+    left: -0.25em;
+    width: 0.5em;
+    height: 0.5em;
+    opacity: 0;
+    -webkit-transform: translate3d(-0.6em, 0, 0) rotate(45deg);
+    transform: translate3d(-0.6em, 0, 0) rotate(45deg);
+  }
+
+  a:after,
+  a span:after {
+    bottom: -webkit-calc(50% - 0.35em);
+    bottom: calc(50% - 0.35em);
+    right: -0.25em;
+    width: 0.5em;
+    height: 0.5em;
+    opacity: 0;
+    -webkit-transform: translate3d(0.6em, 0, 0) rotate(45deg);
+    transform: translate3d(0.6em, 0, 0) rotate(45deg);
+  }
+
+  a:before,
+  a:after {
+    -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s;
+    transition: transform 0.3s ease-out, opacity 0.3s;
+  }
+
+  a span:before,
+  a span:after {
+    -webkit-transition: -webkit-transform 0.3s ease-out 0.15s, opacity 0s 0.05s;
+    transition: transform 0.3s ease-out 0.15s, opacity 0s 0.05s;
+  }
+
+  a:hover {
+    overflow: visible;
+  }
+
+  a:hover:before,
+  a:hover span:before {
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    opacity: 1;
+  }
+
+  a:hover:after,
+  a:hover span:after {
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
+    opacity: 1;
+  }
+
+  a:before,
+  a span:before {
+    border-right: 0.15em solid #ff5851;
+    border-top: 0.15em solid #ff5851;
+  }
+
+  a:after,
+  a span:after {
+    border-left: 0.15em solid #ff5851;
+    border-bottom: 0.15em solid #ff5851;
+  }
+</style>

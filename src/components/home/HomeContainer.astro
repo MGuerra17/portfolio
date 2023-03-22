@@ -1,0 +1,13 @@
+<article class="w-full flex flex-col md:flex-row mt-14 bg-zinc-100">
+  <slot />
+</article>
+
+<style>
+  @media (min-width: 768px) {
+    article {
+      background-image: linear-gradient(to right, #ff5851 50%, transparent 50%);
+      height: calc(100vh - 3.5rem);
+      max-height: 900px;
+    }
+  }
+</style>

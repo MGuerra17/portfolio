@@ -1,0 +1,72 @@
+---
+import StackIcon from "./StackIcon.astro";
+import StackIconContainer from "./StackIconContainer.astro";
+import gitIcon from "/git.svg";
+import javascriptIcon from "/javascript.svg";
+import jestIcon from "/jest.svg";
+import mongoIcon from "/mongo.svg";
+import mysqlIcon from "/mysql.svg";
+import nextIcon from "/next-js.svg";
+import reactIcon from "/react.svg";
+import tailwindIcon from "/tailwind.svg";
+import typescriptIcon from "/typescript.svg";
+import bootstrapIcon from "/bootstrap.svg";
+import arrowIcon from "/arrow-curved.svg";
+import "@fontsource/satisfy";
+---
+
+<div class="hidden absolute left-0 md:flex bottom-[150px] ml-12">
+  <p class="stack-title text-4xl text-neutral-400">Stack</p>
+  <img
+    class="ml-3 rotate-45 w-14 stack-arrow opacity-95"
+    src={arrowIcon}
+    alt="arrow icon"
+  />
+</div>
+<div class="hidden md:block triangle absolute bottom-0 border-neutral-900">
+</div>
+<div class="absolute bottom-0 w-full h-[100px] flex justify-evenly">
+  <StackIconContainer>
+    <StackIcon src={javascriptIcon} id="element-1" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={typescriptIcon} id="element-2" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={bootstrapIcon} id="element-3" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={tailwindIcon} id="element-4" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={reactIcon} id="element-5" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={nextIcon} id="element-6" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={mongoIcon} id="element-7" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={mysqlIcon} id="element-8" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={jestIcon} id="element-9" />
+  </StackIconContainer>
+  <StackIconContainer>
+    <StackIcon src={gitIcon} id="element-10" />
+  </StackIconContainer>
+</div>
+<style>
+  .triangle {
+    width: 0;
+    height: 0;
+    border: calc(50vw - 4rem) solid transparent;
+    border-top: 0;
+    border-bottom: 100px solid #171717;
+    filter: drop-shadow(0px -1px 16px #171717);
+  }
+  .stack-title {
+    font-family: "Satisfy", cursive;
+  }
+</style>

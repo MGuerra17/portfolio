@@ -1,0 +1,44 @@
+---
+import SectionContainer from "../containers/SectionContainer.astro";
+import SectionTitle from "../containers/SectionTitle.astro";
+import Stack from "./Stack.astro";
+import avatar1 from "/avatar1.png";
+import avatar2 from "/avatar2.png";
+---
+
+<SectionContainer fitToScreen>
+  <SectionTitle>About</SectionTitle>
+  <div
+    class="flex flex-col-reverse md:pb-80 md:pt-36 md:my-0 md:flex-row px-10 gap-10"
+  >
+    <div class="h-44 w-44 min-w-[11rem] mx-auto md:min-h-full relative">
+      <img
+        class="w-44 h-44 bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto"
+        src={avatar2}
+      />
+      <img
+        class="w-44 h-44 bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto hover:hidden"
+        src={avatar1}
+      />
+    </div>
+    <div class="md:min-h-full md:grid place-items-center">
+      <div class="max-w-lg">
+        <p>
+          My name is <span class="text-primary">Miguel Angel Guerra</span>. I am
+          an electronic engineer dedicated to software development specifically
+          to web development.
+        </p>
+        <p class="my-4">
+          I am <span class="text-primary">22 years old</span> and I live in <span
+            class="text-primary">Barranquilla, Colombia</span
+          >.
+        </p>
+        <p>
+          <span class="text-primary">I love what I do</span> and really enjoy helping
+          solve problems through my work.
+        </p>
+      </div>
+    </div>
+  </div>
+  <Stack />
+</SectionContainer>

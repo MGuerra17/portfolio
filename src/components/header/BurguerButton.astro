@@ -1,0 +1,46 @@
+---
+const { elementId } = Astro.props;
+---
+
+<button class="burger flex md:hidden" id={elementId}> </button>
+
+<style>
+  .burger {
+    outline: none;
+    height: 20px;
+    width: 15px;
+    border: 0px;
+    padding: 0px;
+    background: transparent;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+  }
+
+  .burger:before,
+  .burger:after {
+    content: "";
+    width: 15px;
+    height: 2px;
+    margin-top: 10px;
+    position: absolute;
+    background: #1a1a1a;
+    transition: all 250ms ease-out;
+    will-change: transform;
+  }
+
+  .burger:before {
+    transform: translateY(-3px);
+  }
+
+  .burger:after {
+    transform: translateY(3px);
+  }
+
+  .active.burger:before {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .active.burger:after {
+    transform: translateY(0) rotate(-45deg);
+  }
+</style>
