@@ -9,15 +9,34 @@ import ProjectImage from "./ProjectImage.astro";
 import ProjectTechnologiesContainer from "./ProjectTechnologiesContainer.astro";
 import ProjectTitle from "./ProjectTitle.astro";
 import reactLogo from "/react.svg";
-import githubLogo from "/github.svg";
+import projectImage from "/computerProjects.png";
 import tailwindLogo from "/tailwind.svg";
 import mysqlLogo from "/mysql.svg";
 ---
 
-<SectionContainer dark>
+<SectionContainer sectionId="projects" dark>
   <SectionTitle dark>Projects</SectionTitle>
   <ProjectContainer firstProject>
-    <ProjectImage image={githubLogo} description="Logo de github" />
+    <ProjectImage image={projectImage} description="Logo de github" />
+    <ProjectDescriptionContainer>
+      <ProjectTechnologiesContainer>
+        <img class="w-6 h-6 grayscale" src={reactLogo} title="React" />
+        <img class="w-6 h-6 grayscale" src={tailwindLogo} title="Tailwind" />
+        <img class="w-6 h-6 grayscale" src={mysqlLogo} title="Mysql" />
+      </ProjectTechnologiesContainer>
+      <ProjectTitle>Proyecto Camilo</ProjectTitle>
+      <span class="text-primary">2022</span>
+      <ProjectDescription>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis
+        lacus at neque ornare maximus. Duis consequat nibh vel aliquam auctor.
+        Praesent diam elit, viverra at nisl a, suscipit pellentesque mi. In dui
+        velit, fringilla a massa ac, feugiat ultrices.
+      </ProjectDescription>
+      <ProjectExternalSources githubUrl="#" demoUrl="#" />
+    </ProjectDescriptionContainer>
+  </ProjectContainer>
+  <ProjectContainer>
+    <ProjectImage image={projectImage} description="Logo de github" />
     <ProjectDescriptionContainer>
       <ProjectTechnologiesContainer>
         <img class="w-6 h-6 grayscale" src={reactLogo} title="React" />
@@ -36,26 +55,7 @@ import mysqlLogo from "/mysql.svg";
     </ProjectDescriptionContainer>
   </ProjectContainer>
   <ProjectContainer>
-    <ProjectImage image={githubLogo} description="Logo de github" />
-    <ProjectDescriptionContainer>
-      <ProjectTechnologiesContainer>
-        <img class="w-6 h-6 grayscale" src={reactLogo} title="React" />
-        <img class="w-6 h-6 grayscale" src={tailwindLogo} title="Tailwind" />
-        <img class="w-6 h-6 grayscale" src={mysqlLogo} title="Mysql" />
-      </ProjectTechnologiesContainer>
-      <ProjectTitle>Fireno App</ProjectTitle>
-      <span class="text-primary">2022</span>
-      <ProjectDescription>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis
-        lacus at neque ornare maximus. Duis consequat nibh vel aliquam auctor.
-        Praesent diam elit, viverra at nisl a, suscipit pellentesque mi. In dui
-        velit, fringilla a massa ac, feugiat ultrices.
-      </ProjectDescription>
-      <ProjectExternalSources githubUrl="#" demoUrl="#" />
-    </ProjectDescriptionContainer>
-  </ProjectContainer>
-  <ProjectContainer>
-    <ProjectImage image={githubLogo} description="Logo de github" />
+    <ProjectImage image={projectImage} description="Logo de github" />
     <ProjectDescriptionContainer>
       <ProjectTechnologiesContainer>
         <img class="w-6 h-6 grayscale" src={reactLogo} title="React" />

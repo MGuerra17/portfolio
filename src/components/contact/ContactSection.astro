@@ -1,0 +1,94 @@
+---
+import SectionContainer from "../containers/SectionContainer.astro";
+import ContactTitle from "./ContactTitle.astro";
+import contactImage from "/contact.png";
+import messageIcon from "/message.svg";
+---
+
+<ContactTitle />
+<SectionContainer sectionId="contact" className="-mt-7 md:-mt-16">
+  <div
+    class="flex flex-col md:flex-row w-full gap-10 lg:gap-20 justify-center max-w-5xl px-5 md:px-10 lg:px-20 py-14"
+  >
+    <div class="flex flex-col w-62 max-w-xs mx-auto">
+      <p class="text-2xl font-bold">
+        Love to hear from you<span class="text-primary">,</span>
+      </p>
+      <p class="text-2xl font-bold">
+        Get in touch<span class="text-primary">.</span>
+      </p>
+      <img width="300px" height="200" src={contactImage} alt="contact image" />
+      <div class="flex items-center w-full gap-3 justify-center">
+        <img
+          class="contact-icon"
+          width="40px"
+          height="40px"
+          src={messageIcon}
+          alt="message icon"
+        />
+        <div>
+          <p class="text-sm">Miguel Angel Guerra Ch</p>
+          <p class="text-sm">Email: contact@miguelguerra.com</p>
+          <p class="text-sm">Barranquilla, Col</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-neutral-900 flex flex-1 flex-col rounded-3xl px-7 md:px-10 gap-x-10 py-14"
+    >
+      <p class="text-2xl text-white font-bold mb-5 w-full">
+        Send me a message<span class="text-primary">.</span>
+      </p>
+      <form>
+        <div class="w-full flex flex-col lg:flex-row gap-x-5">
+          <div class="w-full lg:w-1/2">
+            <label
+              for="first_name"
+              class="block mb-2 text-sm font-medium text-white"
+              >First name <span class="text-primary">*</span></label
+            >
+            <input
+              type="text"
+              id="first_name"
+              class="bg-transparent rounded-none outline-none border-b border-b-neutral-400 text-white text-sm focus:border-b-primary w-full block py-2.5"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          <div class="w-full lg:w-1/2">
+            <label
+              for="email"
+              class="block mb-2 text-sm font-medium text-white mt-3 lg:mt-0"
+              >Email <span class="text-primary">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              class="bg-transparent rounded-none outline-none border-b border-b-neutral-400 text-white text-sm focus:border-b-primary w-full block py-2.5"
+              placeholder="johndoe@example.com"
+              required
+            />
+          </div>
+        </div>
+
+        <label
+          for="message"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-5"
+          >Your message<span class="text-primary">*</span></label
+        >
+        <textarea
+          id="message"
+          rows="4"
+          class="bg-transparent resize-none outline-none border rounded-lg p-2.5 border-neutral-400 text-white text-sm focus:border-primary w-full block py-2.5"
+          placeholder="Write your thoughts here..."></textarea>
+      </form>
+    </div>
+  </div>
+</SectionContainer>
+
+<style>
+  .contact-icon {
+    filter: invert(83%) sepia(38%) saturate(500%) hue-rotate(90deg)
+      brightness(90%) contrast(83%);
+  }
+</style>

@@ -4,10 +4,10 @@ import NavbarLink from "./NavbarLink.astro";
 ---
 
 <header
-  class="px-8 fixed bg-zinc-100 md:bg-zinc-100/50 backdrop-blur-xl -mt-14 z-10"
+  class="px-8 fixed bg-zinc-100 md:bg-white/50 backdrop-blur-xl -mt-14 z-20"
 >
   <nav class="flex h-14 justify-between items-center">
-    <a href="" class="py-3 text-xl"
+    <a href="#home" class="py-3 text-xl"
       ><span class="font-bold">Miguel</span>Guerra</a
     >
     <BurguerButton elementId="burguer-button" />
@@ -15,11 +15,10 @@ import NavbarLink from "./NavbarLink.astro";
       class="absolute top-0 mt-14 transition-transform duration-500 translate-x-full md:translate-x-0 md:mt-0 md:relative bg-zinc-100 w-full -ml-8 md:w-min md:bg-transparent md:flex items-center nav-menu"
       id="links-container"
     >
-      <NavbarLink href="#" title="Home" />
-      <NavbarLink href="#" title="About" />
-      <NavbarLink href="#" title="Projects" />
-      <NavbarLink href="#" title="Experience" />
-      <NavbarLink href="#" title="Contact" />
+      <NavbarLink href="#home" title="Home" />
+      <NavbarLink href="#about" title="About" />
+      <NavbarLink href="#projects" title="Projects" />
+      <NavbarLink href="#contact" title="Contact" />
     </ul>
   </nav>
 </header>
@@ -27,7 +26,13 @@ import NavbarLink from "./NavbarLink.astro";
 <script>
   const burguer = document.getElementById("burguer-button");
   const linksContainer = document.getElementById("links-container");
-
+  linksContainer.addEventListener("click", () => {
+    const currentWidth = window.innerWidth;
+    if (currentWidth < 768) {
+      burguer.classList.toggle("active");
+      linksContainer.classList.toggle("translate-x-full");
+    }
+  });
   burguer.addEventListener("click", () => {
     burguer.classList.toggle("active");
     linksContainer.classList.toggle("translate-x-full");
