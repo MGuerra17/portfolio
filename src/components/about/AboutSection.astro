@@ -4,6 +4,7 @@ import SectionTitle from "../containers/SectionTitle.astro";
 import Stack from "./Stack.astro";
 import avatar1 from "/avatar1.png";
 import avatar2 from "/avatar2.png";
+import arrowDown from "/arrow-down.svg";
 ---
 
 <SectionContainer sectionId="about" fitToScreen>
@@ -44,6 +45,18 @@ import avatar2 from "/avatar2.png";
             solve problems through my work.
           </p>
         </div>
+        <a
+          href="#"
+          class="flex items-center text-lg font-bold justify-center md:justify-self-end mx-auto md:mx-0"
+          ><img
+            src={arrowDown}
+            width="40px"
+            height="40px"
+            id="downloadIcon"
+            alt="Download icon"
+          />
+          Download CV</a
+        >
       </div>
     </div>
     <div class="md:px-0 max-w-md">
@@ -82,3 +95,10 @@ import avatar2 from "/avatar2.png";
   </div>
   <Stack />
 </SectionContainer>
+
+<style>
+  #downloadIcon {
+    filter: invert(73%) sepia(77%) saturate(389%) hue-rotate(97deg)
+      brightness(85%) contrast(94%);
+  }
+</style>
