@@ -4,8 +4,8 @@ const { image, description } = Astro.props;
 
 <div class="min-w-max">
   <img
-    width="300px"
-    style="aspect-ratio: 16/9;"
+    class=" object-contain max-w-full px-8 md:px-0"
+    width="400px"
     src={image}
     alt={description}
   />

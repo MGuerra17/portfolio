@@ -10,26 +10,26 @@ import arrowDown from "/arrow-down.svg";
 <SectionContainer sectionId="about" fitToScreen>
   <SectionTitle>About</SectionTitle>
   <div
-    class="flex items-center flex-col md:pb-80 md:pt-36 md:my-0 md:flex-row px-10 gap-10 md:gap-20 lg:gap-36"
+    class="flex items-center flex-col md:pb-80 md:pt-36 md:my-0 md:flex-row px-10 gap-10 md:gap-6 lg:gap-10 xl:gap-20"
   >
-    <div class="flex items-center flex-col-reverse md:flex-col gap-10">
+    <div class="flex items-center md:w-1/2 w-full flex-col-reverse md:flex-col gap-10">
       <div
-        class="h-56 w-44 min-w-[11rem] mx-auto md:min-h-full relative flex items-end"
+        class="h-56 aspect-square md:min-h-full relative flex items-end"
       >
         <img
-          class="w-44 h-44 bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto"
+          class="h-44 min-w-fit aspect-square bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto"
           src={avatar2}
         />
         <img
-          class="w-44 h-44 bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto hover:hidden"
+          class="h-44 min-w-fit aspect-square bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto hover:hidden"
           src={avatar1}
         />
         <hr
-          class="w-20 h-1 mx-auto bg-gray-100 border-0 rounded dark:bg-neutral-400"
+          class="w-20 h-1 mx-auto border-0 rounded bg-neutral-400"
         />
       </div>
-      <div class="md:min-h-full md:grid place-items-center">
-        <div class="max-w-lg">
+      <div class="md:min-h-full w-full">
+        <div class="">
           <p>
             My name is <span class="text-primary">Miguel Angel Guerra</span>. I
             am an electronic engineer dedicated to software development
@@ -47,7 +47,7 @@ import arrowDown from "/arrow-down.svg";
         </div>
         <a
           href="#"
-          class="flex items-center text-lg font-bold justify-center md:justify-self-end mx-auto md:mx-0"
+          class="flex items-center text-lg font-bold justify-end mt-6 hover:underline"
           ><img
             src={arrowDown}
             width="40px"
@@ -59,7 +59,7 @@ import arrowDown from "/arrow-down.svg";
         >
       </div>
     </div>
-    <div class="md:px-0 max-w-md">
+    <div class="md:px-0 md:w-1/2 w-full">
       <h6 class="text-lg mb-6 font-bold">Experience</h6>
       <ol class="relative border-l border-gray-400">
         <li class="mb-10 ml-4">

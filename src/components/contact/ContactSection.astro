@@ -8,7 +8,7 @@ import messageIcon from "/message.svg";
 <ContactTitle />
 <SectionContainer sectionId="contact" className="-mt-7 md:-mt-16">
   <div
-    class="flex flex-col md:flex-row w-full gap-10 lg:gap-20 justify-center max-w-5xl px-5 md:px-10 lg:px-20 py-14"
+    class="flex flex-col md:flex-row w-full gap-10 lg:gap-20 justify-center items-center max-w-5xl px-5 md:px-10 lg:px-20 py-14"
   >
     <div class="flex flex-col w-62 max-w-xs mx-auto">
       <p class="text-2xl font-bold">
@@ -34,22 +34,23 @@ import messageIcon from "/message.svg";
       </div>
     </div>
     <div
-      class="bg-neutral-900 flex flex-1 flex-col rounded-3xl px-7 md:px-10 gap-x-10 py-14"
+      class="bg-neutral-900 flex flex-1 flex-col rounded-3xl px-7 md:px-10 gap-x-10 pt-14 pb-7 w-full"
     >
       <p class="text-2xl text-white font-bold mb-5 w-full">
         Send me a message<span class="text-primary">.</span>
       </p>
-      <form>
+      <form id="contact-form">
         <div class="w-full flex flex-col lg:flex-row gap-x-5">
           <div class="w-full lg:w-1/2">
             <label
-              for="first_name"
+              for="from_name"
               class="block mb-2 text-sm font-medium text-white"
-              >First name <span class="text-primary">*</span></label
+              >Name <span class="text-primary">*</span></label
             >
             <input
               type="text"
-              id="first_name"
+              id="from_name"
+              name="from_name"
               class="bg-transparent rounded-none outline-none border-b border-b-neutral-400 text-white text-sm focus:border-b-primary w-full block py-2.5"
               placeholder="John Doe"
               required
@@ -57,13 +58,14 @@ import messageIcon from "/message.svg";
           </div>
           <div class="w-full lg:w-1/2">
             <label
-              for="email"
+              for="from_email"
               class="block mb-2 text-sm font-medium text-white mt-3 lg:mt-0"
               >Email <span class="text-primary">*</span></label
             >
             <input
               type="email"
-              id="email"
+              id="from_email"
+              name="from_email"
               class="bg-transparent rounded-none outline-none border-b border-b-neutral-400 text-white text-sm focus:border-b-primary w-full block py-2.5"
               placeholder="johndoe@example.com"
               required
@@ -73,15 +75,19 @@ import messageIcon from "/message.svg";
 
         <label
           for="message"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-5"
-          >Your message<span class="text-primary">*</span></label
+          class="block mb-2 text-sm font-medium text-white mt-5"
+          >Your message <span class="text-primary">*</span></label
         >
         <textarea
           id="message"
+          name="message"
           rows="4"
           class="bg-transparent resize-none outline-none border rounded-lg p-2.5 border-neutral-400 text-white text-sm focus:border-primary w-full block py-2.5"
           placeholder="Write your thoughts here..."></textarea>
-      </form>
+          <div class="w-full flex mt-3">
+            <input id="sendButton" class="bg-primary rounded-full text-white px-8 py-2 ml-auto hover:bg-primary/90 disabled:bg-primary/50 disabled:text-gray-300" type="submit" value="Send">
+          </div>
+        </form>
     </div>
   </div>
 </SectionContainer>
@@ -92,3 +98,30 @@ import messageIcon from "/message.svg";
       brightness(90%) contrast(83%);
   }
 </style>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('t0vXz2CK6SKMq5uZ3');
+  window.onload = function() {
+    const contactForm = document.getElementById('contact-form')
+    const sendButton = document.getElementById('sendButton')
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      console.log(sendButton)
+      sendButton.disabled = true
+      sendButton.value = 'Sending...'
+      emailjs.sendForm('service_iy5yd3c', 'template_s4yft1e', this)
+        .then(() => {
+          alert('Mensaje enviado exitosamente! Pronto me pondre en contacto.');
+        })
+        .catch((error) => {          
+          alert(`Error: ${error}. Intente contactar por otro medio.`);
+        })
+        .finally(() => {
+          contactForm.reset()
+          sendButton.disabled = false
+          sendButton.value = 'Send'
+        })
+    });
+  }
+</script>
