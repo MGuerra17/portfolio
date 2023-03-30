@@ -4,7 +4,7 @@ const { dark, className, sectionId } = Astro.props;
 
 <article
   id={sectionId}
-  class={`w-full flex flex-col md:flex-row flex-wrap py-10 min-h-max ${
+  class={`min-w-full flex flex-col md:flex-row flex-wrap py-10 min-h-max ${
     dark ? "bg-neutral-900" : "bg-zinc-100"
   } relative items-center justify-center ${className}`}
 >

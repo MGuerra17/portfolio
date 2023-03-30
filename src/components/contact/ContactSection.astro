@@ -1,14 +1,14 @@
 ---
 import SectionContainer from "../containers/SectionContainer.astro";
 import ContactTitle from "./ContactTitle.astro";
-import contactImage from "/contact.png";
+import contactImage from "/contact.webp";
 import messageIcon from "/message.svg";
 ---
 
 <ContactTitle />
 <SectionContainer sectionId="contact" className="-mt-7 md:-mt-16">
   <div
-    class="flex flex-col md:flex-row w-full gap-10 lg:gap-20 justify-center items-center max-w-5xl px-5 md:px-10 lg:px-20 py-14"
+    class="flex flex-col md:flex-row w-full gap-10 lg:gap-20 justify-center items-center max-w-5xl px-5 md:px-10 lg:px-20 py-14 animated"
   >
     <div class="flex flex-col w-62 max-w-xs mx-auto">
       <p class="text-2xl font-bold">
@@ -17,7 +17,7 @@ import messageIcon from "/message.svg";
       <p class="text-2xl font-bold">
         Get in touch<span class="text-primary">.</span>
       </p>
-      <img width="300px" height="200" src={contactImage} alt="contact image" />
+      <img width="300" height="200" src={contactImage} alt="contact image" />
       <div class="flex items-center w-full gap-3 justify-center">
         <img
           class="contact-icon"
@@ -27,9 +27,9 @@ import messageIcon from "/message.svg";
           alt="message icon"
         />
         <div>
-          <p class="text-sm">Miguel Angel Guerra Ch</p>
-          <p class="text-sm">Email: contact@miguelguerra.com</p>
-          <p class="text-sm">Barranquilla, Col</p>
+          <p class="text-md">Miguel Angel Guerra Ch</p>
+          <p class="text-md">contact@miguelguerra.dev</p>
+          <p class="text-md">Barranquilla, Colombia</p>
         </div>
       </div>
     </div>

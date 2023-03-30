@@ -2,21 +2,21 @@
 import githubLogo from "/github.svg";
 import liveDemoLogo from "/external-link.svg";
 
-const { githubUrl, demoUrl } = Astro.props;
+const { githubUrl, demoUrl, projectName } = Astro.props;
 ---
 
 <div class="mt-3 flex gap-3">
   {
     githubUrl && (
-      <a href={githubUrl}>
-        <img class="w-7 h-7 projectSource" src={githubLogo} />
+      <a href={githubUrl} target="_blank">
+        <img class="w-7 h-7 projectSource" src={githubLogo} alt="Github icon" aria-label={`Go to github repository of ${projectName} project`} />
       </a>
     )
   }
   {
     demoUrl && (
-      <a href={demoUrl}>
-        <img class="w-8 h-8 projectSource" src={liveDemoLogo} />
+      <a href={demoUrl} target="_blank">
+        <img class="w-8 h-8 projectSource" src={liveDemoLogo} alt="External source icon" aria-label={`Go to live demo of ${projectName} project`} />
       </a>
     )
   }

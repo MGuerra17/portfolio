@@ -10,10 +10,11 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Miguel Guerra's web portfolio with information about his frontend web development work, projects and experiences." />
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="w-full md:px-16 relative">
+		<div class="w-full md:px-16 relative	">
 			<slot />
 		</div>
 	</body>
@@ -22,5 +23,28 @@ const { title } = Astro.props;
 			font-family: "Rubik", sans-serif;
 			scroll-behavior: smooth;
 		}
+		.animated {
+			opacity: 0;
+			transition: all 1.5s;
+		}
+		.fade-up {
+			transform: translateY(100px);
+		}
+		.fade-right {
+			transform: translateX(-100px);
+		}
+		.show {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	</style>
+	<script>
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) { entry.target.classList.add('show') }
+			})
+		})
+		const hiddenElements = document.querySelectorAll('.animated')
+		hiddenElements.forEach((element) => observer.observe(element))
+	</script>
 </html>

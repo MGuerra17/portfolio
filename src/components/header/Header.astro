@@ -7,8 +7,8 @@ import NavbarLink from "./NavbarLink.astro";
   class="px-8 fixed bg-zinc-100 md:bg-white/50 backdrop-blur-xl -mt-14 z-30"
 >
   <nav class="flex h-14 justify-between items-center">
-    <a href="#home" class="py-3 text-xl"
-      ><span class="font-bold">M</span>G</a
+    <a href="/" class="py-3 text-xl font-bold logo"
+      >MG</a
     >
     <BurguerButton elementId="burguer-button" />
     <ul
@@ -42,6 +42,9 @@ import NavbarLink from "./NavbarLink.astro";
 <style>
   header {
     width: 100%;
+  }
+  .logo {
+    text-shadow: 0px 2px 0px #ff5851;
   }
   @media (min-width: 768px) {
     header {

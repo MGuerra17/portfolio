@@ -18,6 +18,8 @@ import "@fontsource/satisfy";
 <div class="hidden absolute left-0 md:flex bottom-[150px] ml-20">
   <p class="stack-title text-4xl text-neutral-400">Stack</p>
   <img
+  width="56"
+  height="56"
     class="ml-3 rotate-45 w-14 stack-arrow opacity-95"
     src={arrowIcon}
     alt="arrow icon"
@@ -25,9 +27,9 @@ import "@fontsource/satisfy";
 </div>
 <div class="hidden md:block triangle absolute bottom-0 border-neutral-900">
 </div>
-<div class="absolute bottom-0 w-full h-[100px] flex justify-evenly">
+<div class="absolute bottom-0 w-full h-[100px] flex justify-evenly animated fade-up">
   <StackIconContainer>
-    <StackIcon src={javascriptIcon} id="element-1" />
+    <StackIcon src={javascriptIcon} id="element-1" name="javascript" />
   </StackIconContainer>
   <StackIconContainer>
     <StackIcon src={typescriptIcon} id="element-2" />
@@ -61,7 +63,7 @@ import "@fontsource/satisfy";
   .triangle {
     width: 0;
     height: 0;
-    border: calc(50vw - 4rem) solid transparent;
+    border: calc(50vw - 4.5rem) solid transparent;
     border-top: 0;
     border-bottom: 100px solid #171717;
     filter: drop-shadow(0px -1px 16px #171717);

@@ -1,32 +1,31 @@
 ---
 import "@fontsource/roboto-slab";
 import HomeContainer from "./HomeContainer.astro";
-import miguelsImage from "/me.png"
+import miguelsImage from "/me.webp"
 ---
 
 <HomeContainer>
   <div
-    class="bg-primary w-full md:w-1/2 md:whitespace-nowrap flex md:justify-end py-6 pl-6 md:p-0"
+    class="bg-primary w-full md:w-1/2 md:whitespace-nowrap flex md:justify-end py-6 pl-3 md:p-0"
   >
   <div class="w-fit -mr-8 md:-mr-16 lg:-mr-32">
-    <p class="text-white text-sm">Hi there, my name is</p>
     <h1
-      class="main-name text-black font-black text-5xl md:text-5xl lg:text-7xl xl:text-8xl my-3"
+      class="main-name text-neutral-900 font-black text-5xl md:text-5xl lg:text-7xl xl:text-8xl mb-6 animated fade-up"
     >
       Miguel Guerra<span class="text-white md:text-primary">.</span>
     </h1>
-    <h2 class="text-white text-xl md:text-2xl lg:text-4xl">
+    <h2 class="text-white text-xl md:text-2xl lg:text-4xl animated fade-up">
       Front-end developer
     </h2>
-    <p class="text-white text-md mt-3">Two years experience</p>
+    <p class="text-white text-md mt-2 animated fade-up">Bringing design to life, one pixel at a time</p>
   </div>
   </div>
   <div
     class="w-full md:bg-transparent md:w-1/2 min-h-full flex-1 flex items-center justify-center"
   >
-    <div class="relative flex justify-center">
-      <img class=" h-80 object-contain mt-5 z-20 pb-2" src={miguelsImage} />
-      <div class="rounded-3xl bg-neutral-900 w-44 md:w-52 lg:w-64 aspect-video z-0 absolute bottom-0"></div>
+    <div class="relative flex justify-center animated">
+      <img height="320" width="204" class="object-contain mt-5 z-20 pb-2" src={miguelsImage} alt="Miguel Guerra dressed in a sweatshirt and smiling" />
+      <div class="rounded-3xl bg-neutral-900 w-64 aspect-video z-0 absolute bottom-0"></div>
     </div>
   </div>
 </HomeContainer>

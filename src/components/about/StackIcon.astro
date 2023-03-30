@@ -1,11 +1,13 @@
 ---
-const { id, src } = Astro.props;
+const { id, src, name } = Astro.props;
 ---
 
 <img
   class="h-12 w-12 grayscale duration-300 hover:-translate-y-1 hover:grayscale-0"
   src={src}
   id={id}
+  title={name}
+  alt={name + ' icon'}
 />
 
 <style>

@@ -2,9 +2,10 @@
 import SectionContainer from "../containers/SectionContainer.astro";
 import SectionTitle from "../containers/SectionTitle.astro";
 import Stack from "./Stack.astro";
-import avatar1 from "/avatar1.png";
-import avatar2 from "/avatar2.png";
+import avatar1 from "/avatar1.webp";
+import avatar2 from "/avatar2.webp";
 import arrowDown from "/arrow-down.svg";
+import Highlighted from "./Highlighted.astro";
 ---
 
 <SectionContainer sectionId="about" fitToScreen>
@@ -12,42 +13,42 @@ import arrowDown from "/arrow-down.svg";
   <div
     class="flex items-center flex-col md:pb-80 md:pt-36 md:my-0 md:flex-row px-10 gap-10 md:gap-6 lg:gap-10 xl:gap-20"
   >
-    <div class="flex items-center md:w-1/2 w-full flex-col-reverse md:flex-col gap-10">
+    <div class="flex items-center md:w-2/3 w-full flex-col-reverse md:flex-col gap-10 animated">
       <div
         class="h-56 aspect-square md:min-h-full relative flex items-end"
       >
         <img
           class="h-44 min-w-fit aspect-square bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto"
           src={avatar2}
+          alt="Miguel Guerra avatar winking and sticking out his tongue"          
         />
         <img
           class="h-44 min-w-fit aspect-square bg-emerald-400 rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto hover:hidden"
           src={avatar1}
+          alt="Miguel Guerra avatar smiling"
         />
         <hr
           class="w-20 h-1 mx-auto border-0 rounded bg-neutral-400"
         />
       </div>
       <div class="md:min-h-full w-full">
-        <div class="">
+        <div class="flex flex-col gap-y-2 text-sm md:max-w-lg mx-auto">
           <p>
-            My name is <span class="text-primary">Miguel Angel Guerra</span>. I
-            am an electronic engineer dedicated to software development
-            specifically to web development.
-          </p>
-          <p class="my-4">
-            I am <span class="text-primary">22 years old</span> and I live in <span
-              class="text-primary">Barranquilla, Colombia</span
-            >.
+            <Highlighted>Electronic engineer</Highlighted> dedicated to frontend development with +2 years of experience.            
           </p>
           <p>
-            <span class="text-primary">I love what I do</span> and really enjoy helping
-            solve problems through my work.
+            Lover of the great impact that frontend development has on the creation of products for both clients and companies. Always <Highlighted>focused on writing scalable, clean and efficient</Highlighted> code.
+          </p>
+          <p>
+            The experience of having worked both in companies and as a freelancer has allowed me to adopt the main skills of each work style, achieving <Highlighted>effective collaboration in multidisciplinary teams</Highlighted> but also the ability to be <Highlighted> autonomous when facing challenges</Highlighted>.
+          </p>
+          <p>
+            If you're looking for someone who can bring a combination of technical knowledge and innovative solutions to your frontend development project, <Highlighted>I'm the person for you!</Highlighted>
           </p>
         </div>
         <a
           href="#"
-          class="flex items-center text-lg font-bold justify-end mt-6 hover:underline"
+          class="flex items-center text-lg font-bold justify-end mt-6 hover:underline animated "
           ><img
             src={arrowDown}
             width="40px"
@@ -59,22 +60,20 @@ import arrowDown from "/arrow-down.svg";
         >
       </div>
     </div>
-    <div class="md:px-0 md:w-1/2 w-full">
-      <h6 class="text-lg mb-6 font-bold">Experience</h6>
+    <div class="md:px-0 md:w-1/3 w-full md:max-w-sm">
+      <p class="text-lg mb-6 font-bold">Experience</p>
       <ol class="relative border-l border-gray-400">
         <li class="mb-10 ml-4">
           <div
             class="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-gray-400"
           >
           </div>
-          <time class="mb-1 text-sm font-normal leading-none text-gray-400"
-            >2021 - 2023</time
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 animated"
+            >2023 - Now</time
           >
-          <h3 class="text-lg font-semibold">Fireno SAS</h3>
-          <p class="mb-4 text-gray-500 text-xs">
-            En la empresa fireno SAS hice tal y tal cosa. Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Veniam, dolorum ad expedita
-            maxime quos qui nobis sapiente id recusandae libero.
+          <h4 class="text-lg font-semibold animated">Freelance</h4>
+          <p class="mb-4 text-gray-500 text-xs animated">
+            As a freelancer, I have worked on various projects for different clients, which has allowed me to acquire extensive experience in technologies and tools for frontend development. I have learned to communicate effectively with my clients, witnessing the positive changes in their businesses with the creation of an online tool. I am excited to continue to grow and learn to collaborate with new clients in the future.
           </p>
         </li>
         <li class="mb-10 ml-4">
@@ -82,12 +81,12 @@ import arrowDown from "/arrow-down.svg";
             class="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-gray-400"
           >
           </div>
-          <time class="mb-1 text-sm font-normal leading-none text-gray-400"
-            >2023 - Now</time
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 animated"
+            >2021 - 2023</time
           >
-          <h3 class="text-lg font-semibold">Freelance</h3>
-          <p class="mb-4 text-gray-500 text-xs">
-            En la empresa fireno SAS hice tal y tal cosa.
+          <h4 class="text-lg font-semibold animated">Fireno SAS</h4>
+          <p class="mb-4 text-gray-500 text-xs animated">
+            We develop multiple software tools from scratch focused on the company's internal administrative and engineering sectors, helping me develop best practices for teamwork. Autonomously develop interfaces capable of satisfying the needs of different projects and which are currently still an important part of the company. In addition, I contributed ideas that allowed us to significantly improve the productivity and usability of the tools created for the company.
           </p>
         </li>
       </ol>
