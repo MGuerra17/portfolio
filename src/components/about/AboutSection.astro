@@ -6,6 +6,7 @@ import avatar1 from "/avatar1.webp";
 import avatar2 from "/avatar2.webp";
 import arrowDown from "/arrow-down.svg";
 import Highlighted from "./Highlighted.astro";
+import curriculum from "/Miguel_Guerra_CV.pdf"
 ---
 
 <SectionContainer sectionId="about" fitToScreen>
@@ -47,8 +48,9 @@ import Highlighted from "./Highlighted.astro";
           </p>
         </div>
         <a
-          href="#"
+          href={curriculum}
           class="flex items-center text-lg font-bold justify-end mt-6 hover:underline animated "
+          target="_blank"
           ><img
             src={arrowDown}
             width="40px"
