@@ -1,6 +1,6 @@
 # Miguel Angel Guerra's Web Portfolio
 
-Web portfolio created by Miguel Angel Guerra, a frontend developer who is passionate about designing and building beautiful and functional websites. The portfolio is built using the Astro framework, which is a modern static site generator that allows for fast and efficient development.
+Web portfolio created by Miguel Angel Guerra, a frontend developer passionate about designing and building beautiful and functional websites. The portfolio is built using the Astro framework, which is a modern static site generator that allows for fast and efficient development.
 
 ## Features
 
